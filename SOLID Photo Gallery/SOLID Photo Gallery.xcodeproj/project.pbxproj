@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		91A8ECC51F54A170003EDBE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECC41F54A170003EDBE9 /* AppDelegate.swift */; };
-		91A8ECC71F54A170003EDBE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECC61F54A170003EDBE9 /* ViewController.swift */; };
 		91A8ECCA1F54A170003EDBE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A8ECC81F54A170003EDBE9 /* Main.storyboard */; };
 		91A8ECCC1F54A170003EDBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A8ECCB1F54A170003EDBE9 /* Assets.xcassets */; };
 		91A8ECCF1F54A170003EDBE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A8ECCD1F54A170003EDBE9 /* LaunchScreen.storyboard */; };
 		91A8ECDA1F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECD91F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift */; };
+		91A8ECE61F54C5A8003EDBE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* Begin PBXFileReference section */
 		91A8ECC11F54A170003EDBE9 /* SOLID Photo Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOLID Photo Gallery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A8ECC41F54A170003EDBE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		91A8ECC61F54A170003EDBE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		91A8ECC91F54A170003EDBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91A8ECCB1F54A170003EDBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91A8ECCE1F54A170003EDBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		91A8ECD51F54A170003EDBE9 /* SOLID Photo GalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SOLID Photo GalleryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A8ECD91F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLID_Photo_GalleryTests.swift; sourceTree = "<group>"; };
 		91A8ECDB1F54A170003EDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +77,12 @@
 		91A8ECC31F54A170003EDBE9 /* SOLID Photo Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				91A8ECC41F54A170003EDBE9 /* AppDelegate.swift */,
-				91A8ECC61F54A170003EDBE9 /* ViewController.swift */,
 				91A8ECC81F54A170003EDBE9 /* Main.storyboard */,
-				91A8ECCB1F54A170003EDBE9 /* Assets.xcassets */,
-				91A8ECCD1F54A170003EDBE9 /* LaunchScreen.storyboard */,
-				91A8ECD01F54A170003EDBE9 /* Info.plist */,
+				91A8ECE91F54C61E003EDBE9 /* Metadata View */,
+				91A8ECE81F54C611003EDBE9 /* Network */,
+				91A8ECE71F54C5B6003EDBE9 /* Photo Collection */,
+				91A8ECEA1F54C634003EDBE9 /* Photo View */,
+				91A8ECE41F54C52A003EDBE9 /* Support Files */,
 			);
 			path = "SOLID Photo Gallery";
 			sourceTree = "<group>";
@@ -94,6 +94,46 @@
 				91A8ECDB1F54A170003EDBE9 /* Info.plist */,
 			);
 			path = "SOLID Photo GalleryTests";
+			sourceTree = "<group>";
+		};
+		91A8ECE41F54C52A003EDBE9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				91A8ECCB1F54A170003EDBE9 /* Assets.xcassets */,
+				91A8ECC41F54A170003EDBE9 /* AppDelegate.swift */,
+				91A8ECCD1F54A170003EDBE9 /* LaunchScreen.storyboard */,
+				91A8ECD01F54A170003EDBE9 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		91A8ECE71F54C5B6003EDBE9 /* Photo Collection */ = {
+			isa = PBXGroup;
+			children = (
+				91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */,
+			);
+			path = "Photo Collection";
+			sourceTree = "<group>";
+		};
+		91A8ECE81F54C611003EDBE9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		91A8ECE91F54C61E003EDBE9 /* Metadata View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Metadata View";
+			sourceTree = "<group>";
+		};
+		91A8ECEA1F54C634003EDBE9 /* Photo View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Photo View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +239,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A8ECC71F54A170003EDBE9 /* ViewController.swift in Sources */,
 				91A8ECC51F54A170003EDBE9 /* AppDelegate.swift in Sources */,
+				91A8ECE61F54C5A8003EDBE9 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AF8594QJUT;
-				INFOPLIST_FILE = "SOLID Photo Gallery/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SOLID Photo Gallery/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoaswitch.SOLID-Photo-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,7 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AF8594QJUT;
-				INFOPLIST_FILE = "SOLID Photo Gallery/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SOLID Photo Gallery/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocoaswitch.SOLID-Photo-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
