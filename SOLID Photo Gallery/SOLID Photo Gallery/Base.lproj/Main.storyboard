@@ -51,7 +51,6 @@
                             <constraints>
                                 <constraint firstAttribute="trailingMargin" secondItem="tHi-cu-PoR" secondAttribute="trailing" constant="8" id="F4z-Ej-UrH"/>
                                 <constraint firstItem="tHi-cu-PoR" firstAttribute="leading" secondItem="eI8-yY-IxU" secondAttribute="leadingMargin" constant="8" id="tAq-5K-oTk"/>
-                                <constraint firstItem="tHi-cu-PoR" firstAttribute="centerX" secondItem="eI8-yY-IxU" secondAttribute="centerX" id="tch-on-V1J"/>
                                 <constraint firstItem="tHi-cu-PoR" firstAttribute="centerY" secondItem="eI8-yY-IxU" secondAttribute="centerY" id="w3m-ET-aVh"/>
                             </constraints>
                         </collectionReusableView>
@@ -65,14 +64,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBy-i0-B1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1084" y="99"/>
-        </scene>
-        <!--SortView-->
-        <scene sceneID="4lT-hf-krJ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SortView" id="Gwo-ea-Ix0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EA9-Iu-qHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2315" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aWQ-zQ-yEg">
