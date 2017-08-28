@@ -13,6 +13,7 @@
 		91A8ECCF1F54A170003EDBE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A8ECCD1F54A170003EDBE9 /* LaunchScreen.storyboard */; };
 		91A8ECDA1F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECD91F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift */; };
 		91A8ECE61F54C5A8003EDBE9 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */; };
+		91A8ECEC1F54C8DA003EDBE9 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A8ECEB1F54C8DA003EDBE9 /* PhotoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		91A8ECD91F54A170003EDBE9 /* SOLID_Photo_GalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLID_Photo_GalleryTests.swift; sourceTree = "<group>"; };
 		91A8ECDB1F54A170003EDBE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		91A8ECEB1F54C8DA003EDBE9 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				91A8ECE51F54C5A8003EDBE9 /* PhotosCollectionViewController.swift */,
+				91A8ECEB1F54C8DA003EDBE9 /* PhotoCollectionViewCell.swift */,
 			);
 			path = "Photo Collection";
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				91A8ECC51F54A170003EDBE9 /* AppDelegate.swift in Sources */,
 				91A8ECE61F54C5A8003EDBE9 /* PhotosCollectionViewController.swift in Sources */,
+				91A8ECEC1F54C8DA003EDBE9 /* PhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
