@@ -6,6 +6,7 @@
 //  Copyright © 2017 Boris Yurkevich. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 private struct ReuseIdentifier {
@@ -15,10 +16,33 @@ private struct ReuseIdentifier {
 }
 
 final class PhotosCollectionViewController: UICollectionViewController {
+    
+    private let photosCollectionService = PhotosCollectionService()
+    private var dataSource: FlickrDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        requestData()
     }
+    
+    private func requestData() {
+        photosCollectionService.request(url: photosCollectionService.flickr.url) { (success, error, data) in
+            if success {
+                let decoder = JSONDecoder()
+                do {
+                    let model = try decoder.decode(FlickrDataModel.self, from: data!)
+                    self.dataSource = model
+                    DispatchQueue.main.async(execute: {
+                        self.collectionView?.reloadData()
+                    })
+                } catch {
+                    print("⚠️ Decoding failed.")
+                }
+            }
+        }
+    }
+    
 
     // MARK: - Navigation
 
@@ -32,14 +56,16 @@ final class PhotosCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        guard let safaDataSource = dataSource else {
+            return 0
+        }
+        return safaDataSource.items.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifier.cell, for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifier.cell, for: indexPath) as UICollectionViewCell
+        
+        cell.backgroundColor = .blue
     
         return cell
     }
