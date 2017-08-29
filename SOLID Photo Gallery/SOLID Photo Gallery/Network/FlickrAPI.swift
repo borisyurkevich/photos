@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FlickrDataService {
+struct FlickrAPI {
     
     enum DataType: String {
         case json

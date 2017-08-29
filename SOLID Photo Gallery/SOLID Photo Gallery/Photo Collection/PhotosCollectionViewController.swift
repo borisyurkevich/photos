@@ -17,7 +17,7 @@ private struct ReuseIdentifier {
 
 final class PhotosCollectionViewController: UICollectionViewController {
     
-    private let photosCollectionService = PhotosCollectionService()
+    private let flickrService = FlickrService()
     private var dataSource: FlickrDataModel?
 
     override func viewDidLoad() {
@@ -27,17 +27,13 @@ final class PhotosCollectionViewController: UICollectionViewController {
     }
     
     private func requestData() {
-        photosCollectionService.request(url: photosCollectionService.flickr.url) { (success, error, data) in
+        flickrService.request(url: flickrService.api.url) { (success, error, data) in
             if success {
-                let decoder = JSONDecoder()
-                do {
-                    let model = try decoder.decode(FlickrDataModel.self, from: data!)
-                    self.dataSource = model
+                if let newModel = self.flickrService.parse(data: data) {
+                    self.dataSource = newModel
                     DispatchQueue.main.async(execute: {
                         self.collectionView?.reloadData()
                     })
-                } catch {
-                    print("⚠️ Decoding failed.")
                 }
             }
         }
