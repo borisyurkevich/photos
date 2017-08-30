@@ -39,16 +39,6 @@ final class PhotosCollectionViewController: UICollectionViewController {
             }
         }
     }
-    
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-
 
     // MARK: UICollectionViewDataSource
 
@@ -83,6 +73,22 @@ final class PhotosCollectionViewController: UICollectionViewController {
         }
         
         return cell
+    }
+    
+    // MARK: CollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let photo = dataSource?.items[indexPath.row] else {
+            return
+        }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell else {
+            return
+        }
+        let viewer = Helper.load(viewController: .photo) as! PhotoViewController
+        viewer.photo = photo
+        viewer.imageFile = cell.imageView.image
+
+        navigationController?.pushViewController(viewer, animated: true)
     }
 
 }
