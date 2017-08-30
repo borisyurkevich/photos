@@ -11,7 +11,7 @@ import Foundation
 extension NetworkService {
     
     /// Performs GET request.
-    /// Returns JSON object.
+    /// Returns data object.
     func request(url: URL?, completion: @escaping (_ success: Bool, _ error: Error?, _ data: Data?) -> ()) {
         guard let safeURL = url else {
             print("⚠️ Missing URL!")

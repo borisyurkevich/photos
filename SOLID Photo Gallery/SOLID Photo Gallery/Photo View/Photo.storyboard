@@ -45,7 +45,11 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="9QH-N0-v14">
-                        <barButtonItem key="rightBarButtonItem" title="Info" id="6df-a0-bSn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="6df-a0-bSn">
+                            <connections>
+                                <segue destination="iDi-IM-JHs" kind="show" identifier="Metadata Segue" id="O39-sb-ADl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -56,6 +60,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Io3-zR-vY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="876" y="144.3778110944528"/>
+        </scene>
+        <!--Metadata-->
+        <scene sceneID="dkB-Ew-49t">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Metadata" id="iDi-IM-JHs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRb-KH-aCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="144"/>
         </scene>
     </scenes>
 </document>

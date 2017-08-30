@@ -21,6 +21,5 @@ struct Helper {
     
     enum StoryboardName: String {
         case photo = "Photo"
-        case detail = "Detail"
     }
 }

@@ -66,5 +66,16 @@ final class PhotoViewController: UIViewController {
         let shareController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(shareController, animated: true, completion: nil)
     }
+    
+    
+     // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Metadata Segue" {
+            let metadataViewer = segue.destination as! MetadataViewController
+            metadataViewer.photo = photo
+        }
+    }
+ 
 
 }
