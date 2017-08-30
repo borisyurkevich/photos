@@ -11,26 +11,49 @@ import XCTest
 
 class SOLID_Photo_GalleryTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testFlickrAPI() {
+        let flickrService = FlickrService()
+        
+        let loading = expectation(description: "Accessing FLickr API")
+        flickrService.request(url: flickrService.api.url) { (success, error, data) in
+            assert(success)
+            loading.fulfill()
         }
+        waitForExpectations(timeout: 60.0)
     }
+    
+    func testParser() {
+        
+        let json = """
+{
+"title": "Uploads from everyone",
+"link": "",
+"description": "",
+"modified": "2017-08-29T23:18:10Z",
+"generator": "",
+"items":
+[{
+"title": "NTPC share-sale is expected to fetch govt Rs. 13,800 crore",
+"link": "",
+"media":
+{
+"m": ""
+},
+"date_taken": "2017-08-29T16:18:10-08:00",
+"description": "",
+"published": "2017-08-29T23:18:10Z",
+"author": "",
+"author_id": "",
+"tags": "news latest india business entertainment world best sports"
+}]
+}
+""".data(using: .utf8)!
+        
+        let service = FlickrService()
+        let result = service.parse(data: json)
+        assert(result != nil)
+        assert(result!.items.count > 0)
+    }
+    
     
 }
