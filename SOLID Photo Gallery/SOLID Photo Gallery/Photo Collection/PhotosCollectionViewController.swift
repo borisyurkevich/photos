@@ -32,6 +32,7 @@ final class PhotosCollectionViewController: UICollectionViewController {
                 if let newModel = self.flickrService.parse(data: data) {
                     self.dataSource = newModel
                     DispatchQueue.main.async(execute: {
+                        self.title = newModel.title
                         self.collectionView?.reloadData()
                     })
                 }
