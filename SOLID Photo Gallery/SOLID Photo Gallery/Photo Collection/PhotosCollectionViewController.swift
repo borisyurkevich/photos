@@ -61,8 +61,26 @@ final class PhotosCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReuseIdentifier.cell, for: indexPath) as UICollectionViewCell
         
-        cell.backgroundColor = .blue
-    
+        guard let customCell = cell as? PhotoCollectionViewCell  else {
+            return cell
+        }
+        guard let photo = dataSource?.items[indexPath.row] else {
+            return cell
+        }
+        guard let url = URL(string: photo.media.m) else {
+            return cell
+        }
+        
+        flickrService.request(url: url) { (success, error, data) in
+            if success {
+                if let image = UIImage(data: data!) {
+                    DispatchQueue.main.async(execute: {
+                        customCell.imageView.image = image
+                    })
+                }
+            }
+        }
+        
         return cell
     }
 

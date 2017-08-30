@@ -19,7 +19,7 @@ extension NetworkService {
             return
         }
 
-        var request = URLRequest(url: safeURL, cachePolicy: .useProtocolCachePolicy)
+        var request = URLRequest(url: safeURL, cachePolicy: .returnCacheDataElseLoad)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         

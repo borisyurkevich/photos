@@ -14,11 +14,12 @@ struct FlickrDataModel: Decodable {
     let description: String
     let modified: String
     let generator: String
-    let items: [Item]
+    let items: [Photo]
     
-    struct Item: Decodable {
+    struct Photo: Decodable {
         let title: String
         let link: String
+        let media: Media
         let description: String
         let dataTaken: String
         let published: String
@@ -26,9 +27,14 @@ struct FlickrDataModel: Decodable {
         let authorIdentifier: String
         let tags: String
         
+        struct Media: Decodable {
+            let m: String
+        }
+        
         private enum CodingKeys: String, CodingKey {
             case title
             case link
+            case media
             case description
             case dataTaken = "date_taken"
             case published
@@ -37,4 +43,5 @@ struct FlickrDataModel: Decodable {
             case tags
         }
     }
+    
 }
