@@ -22,6 +22,7 @@ final class MetadataViewController: UIViewController {
         super.viewDidLoad()
         
         if let safePhoto = photo {
+            title = safePhoto.title
             authorLabel.text = safePhoto.author
             dateTakenLabel.text = safePhoto.dataTaken
             dateAddedLabel.text = safePhoto.published
